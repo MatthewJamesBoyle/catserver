@@ -96,6 +96,7 @@ func TestService_GetImageAndFact(t *testing.T) {
 		ctxWc, _ := context.WithCancel(ctx)
 
 		f.EXPECT().GetFact(ctxWc).Return(cat.Fact(""), testErr)
+		g.EXPECT().GetImage(ctxWc).Times(1)
 
 		c, err := s.GetImageAndFact(context.Background())
 		require.Equal(t, c, cat.CatResult{})
@@ -112,12 +113,11 @@ func TestService_GetImageAndFact(t *testing.T) {
 		s, err := cat.NewService(g, f)
 		testErr := errors.New("some-error")
 		ctx := context.Background()
-		ctxWc, _ := context.WithCancel(ctx)
-
-		f.EXPECT().GetFact(ctxWc).Return(cat.Fact("some-fact"), nil)
-		g.EXPECT().GetImage(ctxWc).Return(cat.ImageURL(""), testErr)
+		f.EXPECT().GetFact(gomock.Any()).Return(cat.Fact("some-fact"), nil)
+		g.EXPECT().GetImage(gomock.Any()).Return(cat.ImageURL(""), testErr)
 
 		c, err := s.GetImageAndFact(ctx)
+
 		require.Equal(t, c, cat.CatResult{})
 		assert.Error(t, err)
 		assert.True(t, errors.Is(err, testErr))
