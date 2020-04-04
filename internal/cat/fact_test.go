@@ -73,7 +73,7 @@ func TestFactService_GetFact(t *testing.T) {
 			"user":"5a9ac18c7478810ea6c06381"
 		}
 		 `
-		u.Path = "/facts"
+		u.Path = "/facts/random"
 
 		req, err := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
 		require.NoError(t, err)
@@ -101,7 +101,7 @@ func TestFactService_GetFact(t *testing.T) {
 		baseURL := "http://someURL"
 		u, err := url.Parse(baseURL)
 		require.NoError(t, err)
-		u.Path = "/facts"
+		u.Path = "/facts/random"
 
 		req, err := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
 		require.NoError(t, err)

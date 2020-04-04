@@ -11,6 +11,10 @@ type CatResult struct {
 	Fact     Fact
 }
 
+type Servicer interface {
+	GetImageAndFact(ctx context.Context) (CatResult, error)
+}
+
 type Service struct {
 	img  ImageGetter
 	fact FactGetter

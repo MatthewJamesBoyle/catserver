@@ -48,7 +48,7 @@ func (f *FactService) GetFact(ctx context.Context) (Fact, error) {
 	if err != nil {
 		return "", err
 	}
-	u.Path = "/facts"
+	u.Path = "/facts/random"
 
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
 	if err != nil {
