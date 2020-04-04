@@ -17,4 +17,3 @@
 /vendor/*
 /cmd/*
 .idea/*
-/internal/mock/*

@@ -12,10 +12,6 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: ${{ matrix.go-version }}
-      - name: install mockgen
-        run: GO111MODULE=on go get github.com/golang/mock/mockgen@latest
-      - name: generate mocks
-        run: go generate gen.go
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Test
