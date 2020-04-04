@@ -1,4 +1,4 @@
-![](https://github.com/matthewJamesBoyle/catserver/workflows/.github/workflows/ci.yaml/badge.svg)
+![](https://github.com/matthewJamesBoyle/catserver/workflows/Test/badge.svg)
 
 
 # Cat Server
