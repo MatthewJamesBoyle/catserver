@@ -6,7 +6,7 @@ package mockcat
 
 import (
 	context "context"
-	gomock "github.com/golang/mock/gomock"
+	gomock "go.uber.org/mock/gomock"
 	cat "github.com/matthewjamesboyle/catserver/internal/cat"
 	http "net/http"
 	reflect "reflect"
