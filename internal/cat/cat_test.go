@@ -3,7 +3,7 @@ package cat_test
 import (
 	"context"
 	"errors"
-	"github.com/golang/mock/gomock"
+	"go.uber.org/mock/gomock"
 	"github.com/matthewjamesboyle/catserver/internal/cat"
 	"github.com/matthewjamesboyle/catserver/internal/mock/mockcat"
 	"github.com/stretchr/testify/assert"

@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"github.com/golang/mock/gomock"
+	"go.uber.org/mock/gomock"
 	"github.com/matthewjamesboyle/catserver/internal/cat"
 	"github.com/matthewjamesboyle/catserver/internal/mock/mockcat"
 	"github.com/matthewjamesboyle/catserver/transport"
